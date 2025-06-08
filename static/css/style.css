@@ -1,0 +1,65 @@
+.light-status {
+    padding: 20px;
+}
+
+.light-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+.light-label {
+    width: 80px;
+    font-weight: bold;
+}
+
+.light-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 15px;
+    background-color: #dc3545;
+    transition: background-color 0.3s ease;
+}
+
+.light-indicator.active {
+    background-color: #28a745;
+}
+
+.brightness-value {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.voice-command {
+    text-align: center;
+}
+
+#startRecording {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+}
+
+#recordingStatus {
+    margin-top: 15px;
+}
+
+#lastCommand {
+    text-align: left;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+} 

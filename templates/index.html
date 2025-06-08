@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼각함수기반 조명 제어 시스템</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">삼각함수기반 조명 제어 시스템</h1>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">조명 상태</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="light-status">
+                            <div class="light-item">
+                                <span class="light-label">LED 1:</span>
+                                <div class="light-indicator" id="led1-status"></div>
+                                <span class="brightness-value" id="led1-brightness">0%</span>
+                            </div>
+                            <div class="light-item">
+                                <span class="light-label">LED 2:</span>
+                                <div class="light-indicator" id="led2-status"></div>
+                                <span class="brightness-value" id="led2-brightness">0%</span>
+                            </div>
+                            <div class="light-item">
+                                <span class="light-label">LED 3:</span>
+                                <div class="light-indicator" id="led3-status"></div>
+                                <span class="brightness-value" id="led3-brightness">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">음성 명령</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="voice-command">
+                            <button id="startRecording" class="btn btn-primary mb-3">
+                                <i class="fas fa-microphone"></i> 음성 명령 시작
+                            </button>
+                            <div id="recordingStatus" class="alert alert-info d-none">
+                                음성을 입력해주세요...
+                            </div>
+                            <div id="lastCommand" class="mt-3">
+                                <h6>마지막 명령:</h6>
+                                <p id="commandText" class="text-muted">-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
