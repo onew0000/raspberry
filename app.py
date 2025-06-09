@@ -1,6 +1,7 @@
 import speech_recognition as sr
 import openai
 from gpiozero import PWMLED
+from gpiozero.pins.pigpio import PiGPIOFactory
 import time
 import math
 from gevent import monkey
@@ -15,11 +16,14 @@ openai.api_key = 'your-openai-api-key'
 
 # GPIO 설정 (라즈베리파이 5용)
 try:
+    # pigpio 팩토리 설정
+    factory = PiGPIOFactory()
+    
     # 3개의 LED 핀 설정
     leds = [
-        PWMLED(18),  # 빨간색 LED
-        PWMLED(23),  # 초록색 LED
-        PWMLED(24)   # 파란색 LED
+        PWMLED(18, pin_factory=factory),  # 빨간색 LED
+        PWMLED(23, pin_factory=factory),  # 초록색 LED
+        PWMLED(24, pin_factory=factory)   # 파란색 LED
     ]
     print("GPIO 초기화 성공")
 except Exception as e:
